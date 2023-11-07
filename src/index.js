@@ -9,6 +9,9 @@ root.render(
   <React.StrictMode>
     <App />
     <h1>hello</h1>
+    <a href="https://github.com/laurenc508/react-weather-app.git">
+      Git hub repository
+    </a>
   </React.StrictMode>
 );
 
