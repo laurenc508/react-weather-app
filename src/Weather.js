@@ -1,5 +1,6 @@
 import React from "react";
 import axios from "axios";
+import FormattedDate from "FormatedDate";
 
 import "./Weather.css";
 
@@ -12,6 +13,7 @@ export default function Weather() {
       temperature: response.data.main.temp,
       humidity: response.data.main.humidity,
       wind: response.data.wind.speed,
+      date: new Date(response.data.dt * 1000),
       city: response.data.name,
       iconUrl: `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`,
       description: response.data.weather[0].description,
