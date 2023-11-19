@@ -1,24 +1,15 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 import "./index.css";
-import "./App.css";
 import "./Weather.css";
-
 import App from "./App";
-import Weather from "./Weather";
+
 import reportWebVitals from "./reportWebVitals";
-import "bootstrap/dist/css/bootstrap.css";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
     <App />
-    <Weather />
-
-    <h1>hello</h1>
-    <a href="https://github.com/laurenc508/react-weather-app.git">
-      Git hub repository
-    </a>
   </React.StrictMode>
 );
 
