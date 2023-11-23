@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import axios from "axios";
 import "./index.css";
 import "./Weather.css";
-import FormattedDate from "./FormattedDate";
+import WeatherInfo from "./WeatherInfo";
 
 import "./Weather.css";
 
@@ -27,7 +27,7 @@ export default function Weather(props) {
   function Search() {
     const apiKey = "11ac77d4c412e530dd8cf272c4c04c34";
     const units = "metric";
-    const apiUrl = `https://api.openweathermap.org/data/3.0/onecall?q=${city}&appid=${apiKey}&units=${units}`;
+    const apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=${units}`;
     axios.get(apiUrl).then(handleResponse);
   }
 
@@ -45,8 +45,8 @@ export default function Weather(props) {
       <div className="container">
         <div className="weather-app-wrapper">
           <div className="weather-app">
-            <form class="mb-3">
-              <div className="row">
+            <form onSubmit={handleSubmit}>
+              <div className="row mb-3">
                 <div className="col-9">
                   <input
                     type="search"
@@ -68,47 +68,14 @@ export default function Weather(props) {
               </div>
             </form>
             <div>
-              <div className="row">
-                <h2>{props.data.city}</h2>
-                <ul>
-                  <li>
-                    <FormattedDate date={weatherData.date} />
-                  </li>
-                  <li>{props.data.description}</li>
-                </ul>
-              </div>
-              <div className="row">
-                <div className="col-6">
-                  <div className="d-flex weather-temperature">
-                    <img
-                      src={props.data.iconUrl}
-                      alt={props.data.description}
-                      className="float-left"
-                    />
-                    <div class="float-left">
-                      <strong>{Math.round(props.data.temperature)}</strong>
-                      <span className="units">°C</span>
-                    </div>
-                  </div>
-                </div>
-                <div className="col-6">
-                  <ul>
-                    <li>
-                      Humidity: <span>{props.data.humidity}</span>%
-                    </li>
-                    <li>
-                      Wind: <span>{props.data.wind}</span>
-                      <span className="wind-speed"> km/h</span>
-                    </li>
-                  </ul>
-                </div>
-              </div>
-              <div className="weather-forecast" id="forecast"></div>
-            </div>{" "}
+              <WeatherInfo data={weatherData} />
+            </div>
           </div>
         </div>
       </div>
     );
-  } else Search();
-  return "Loading...";
+  } else {
+    Search();
+    return "Loading...";
+  }
 }
