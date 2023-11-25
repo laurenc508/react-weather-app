@@ -9,12 +9,17 @@ export default function App() {
     <div className="App">
       <div className="container">
         <Weather defaultCity="Melbourne" />
-        <footer>
-          This project was coded by Lauren Cooper, and is
-          <a href="https://github.com/laurenc508/react-weather-app">
-            open-sourced on Github
-          </a>
-        </footer>
+        <div className="footer-text">
+          <footer>
+            <a
+              className="footer-text"
+              href="https://github.com/laurenc508/react-weather-app"
+            >
+              Open-sourced on Github
+            </a>{" "}
+            and coded by Lauren Cooper
+          </footer>
+        </div>
       </div>
     </div>
   );

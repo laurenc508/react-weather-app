@@ -39,3 +39,9 @@ li {
 li:first-letter {
   text-transform: capitalize;
 }
+
+.footer-text {
+  color: white;
+  margin-top: 20px;
+  text-align: center;
+}

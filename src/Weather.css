@@ -2,10 +2,10 @@
   text-transform: lowercase;
 }
 .weather-app-wrapper {
-  max-width: 600px;
+  max-width: 800px;
+
   margin: 0 auto;
 }
-
 .weather-app {
   margin-top: 20px;
   padding: 25px;
@@ -60,13 +60,7 @@
 .weather-forecast-temp-min {
   opacity: 0.5;
 }
-.open-source {
-  color: white;
-}
 
-.open-source a {
-  color: white;
-}
 .btn {
   background-color: #505085;
   border-color: #505085;
