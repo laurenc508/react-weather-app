@@ -1,5 +1,3 @@
-
-
 .wind-speed {
   text-transform: lowercase;
 }
@@ -23,6 +21,13 @@
   height: 64px;
   width: 64px;
 }
+
+.weather-temperature canvas {
+  margin: 20px;
+  height: 64px;
+  width: 64px;
+}
+
 .weather-temperature strong {
   color: rgb (33, 33, 33);
   font-size: 64px;
