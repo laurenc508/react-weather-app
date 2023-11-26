@@ -1,4 +1,17 @@
-.form h1 {
+@media (max-width: 768px) {
+  .content {
+    text-align: center;
+  }
+
+  .form h1 {
+    font-size: 24px;
+    text-align: center;
+    font-weight: 100;
+    line-height: 28px;
+  }
+}
+
+.content .form h1 {
   font-size: 24px;
   text-align: left;
   font-weight: 100;
@@ -7,6 +20,10 @@
 
 .wrapper-margin-top {
   margin-top: 15px;
+}
+
+.wrapper-margin-bottom {
+  margin-bottom: 15px;
 }
 
 ul {
@@ -25,3 +42,5 @@ li {
 li:first-letter {
   text-transform: capitalize;
 }
+
+

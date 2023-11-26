@@ -2,8 +2,7 @@ import React from "react";
 import ReactAnimatedWeather from "react-animated-weather";
 
 import "bootstrap/dist/css/bootstrap.css";
-import "./WeatherIcon.css";
-
+import "./Weather.css";
 
 export default function WeatherIcon(props) {
   console.log(props.code);
@@ -30,9 +29,9 @@ export default function WeatherIcon(props) {
   return (
     <ReactAnimatedWeather
       icon={codeMapping[props.code]}
-      color="black"
-      size={52}
+      size={62}
       animate={true}
+      color="black"
     />
   );
 }
