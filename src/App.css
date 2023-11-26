@@ -1,3 +1,10 @@
-.App {
-  text-align: center;
+.app {
+  color: black;
+  margin-top: 20px;
+  padding: 25px;
+  border: 1px solid #dadde1;
+  border-radius: 5px;
+  background-color: white;
+  max-width: 100%;
+  margin: 0 auto;
 }

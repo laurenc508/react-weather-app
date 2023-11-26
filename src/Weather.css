@@ -1,1 +1,27 @@
+.form h1 {
+  font-size: 24px;
+  text-align: left;
+  font-weight: 100;
+  line-height: 28px;
+}
 
+.wrapper-margin-top {
+  margin-top: 15px;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+}
+li {
+  list-style: none;
+  font-size: 16px;
+  font-weight: 100;
+  line-height: 19px;
+  margin: 0;
+  padding: 0;
+}
+
+li:first-letter {
+  text-transform: capitalize;
+}
