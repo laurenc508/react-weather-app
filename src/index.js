@@ -10,7 +10,20 @@ import reportWebVitals from "./reportWebVitals";
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
-    <App />
+    <div className="body">
+      <App />
+      <div className="footer-text">
+        <footer>
+          <a
+            className="footer-text"
+            href="https://github.com/laurenc508/react-weather-app"
+          >
+            Open-sourced on Github
+          </a>{" "}
+          and coded by Lauren Cooper
+        </footer>
+      </div>
+    </div>
   </React.StrictMode>
 );
 
