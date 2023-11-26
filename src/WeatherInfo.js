@@ -9,27 +9,28 @@ import "./Weather.css";
 
 export default function WeatherInfo(props) {
   return (
-    <div className="container weather-details content">
-      <div className="row">
-        <h2>{props.data.city}</h2>
-        <ul>
-          <li>
-            <FormattedDate date={props.data.date} />
-          </li>
-          <li>{props.data.description}</li>
-        </ul>
-      </div>
-      <div className="container align-content-top">
+    <div className="container">
+      <div className="col-md-12 weather-details">
         <div className="row">
-          <div className="col-md-6">
-            <div className="d-flex weather-details">
-              <WeatherIcon code={props.data.icon} />
-              <div>
-                <WeatherTemp celsius={props.data.temperature} />
-              </div>
-            </div>
+          <h2>{props.data.city}</h2>
+          <ul>
+            <li>
+              <FormattedDate date={props.data.date} />
+            </li>
+            <li>{props.data.description}</li>
+          </ul>
+        </div>
+        <div className="col-md-12 weather-details">
+          <WeatherIcon code={props.data.icon} />
+          <div>
+            <WeatherTemp celsius={props.data.temperature} />
           </div>
-          <div className="col-md-6">
+        </div>
+      </div>
+
+      <div className="container weather-details">
+        <div className="row">
+          <div className="col-md-12">
             <ul>
               <li>
                 Humidity: <span>{props.data.humidity}</span>%

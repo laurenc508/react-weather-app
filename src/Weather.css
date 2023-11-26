@@ -1,19 +1,9 @@
-@media (max-width: 768px) {
-  .content {
-    text-align: center;
-  }
-
-  .form h1 {
-    font-size: 24px;
-    text-align: center;
-    font-weight: 100;
-    line-height: 28px;
-  }
+.content {
+  text-align: center;
 }
 
-.content .form h1 {
+.form h1 {
   font-size: 24px;
-  text-align: left;
   font-weight: 100;
   line-height: 28px;
 }
@@ -42,5 +32,3 @@ li {
 li:first-letter {
   text-transform: capitalize;
 }
-
-

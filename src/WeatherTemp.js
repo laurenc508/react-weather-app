@@ -23,7 +23,7 @@ export default function WeatherTemp(props) {
 
   if (unit === "celsius") {
     return (
-      <div className="content">
+      <div>
         <span className="temp-font">{Math.round(props.celsius)}</span>
         <span className="units">
           °C |{" "}

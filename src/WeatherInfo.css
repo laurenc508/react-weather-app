@@ -1,6 +1,3 @@
-.weather-info {
-  text-align: center;
-}
 
 .weather-details {
   margin-top: 15px;
@@ -8,6 +5,4 @@
   line-height: 35px;
 }
 
-.align-content-top {
-  justify-content: center;
-}
+
