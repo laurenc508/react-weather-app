@@ -3,7 +3,7 @@ import axios from "axios";
 import "./index.css";
 import "./Weather.css";
 import WeatherInfo from "./WeatherInfo";
-
+import "bootstrap/dist/css/bootstrap.css";
 
 import "./Weather.css";
 
@@ -46,7 +46,7 @@ export default function Weather(props) {
       <div className="container">
         <div className="weather-app-wrapper">
           <div className="weather-app">
-            <form onSubmit={handleSubmit}>
+            <form className="form" onSubmit={handleSubmit}>
               <div className="row mb-3">
                 <div className="col-9">
                   <input

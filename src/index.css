@@ -8,11 +8,6 @@ body {
   background-color: #505085;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
-    monospace;
-}
-
 h1 {
   color: #878787;
   font-size: 24px;
@@ -38,10 +33,4 @@ li {
 
 li:first-letter {
   text-transform: capitalize;
-}
-
-.footer-text {
-  color: white;
-  margin-top: 20px;
-  text-align: center;
 }

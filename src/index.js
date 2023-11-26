@@ -3,6 +3,7 @@ import ReactDOM from "react-dom/client";
 import "./index.css";
 import "./Weather.css";
 import App from "./App";
+import "bootstrap/dist/css/bootstrap.css";
 
 import reportWebVitals from "./reportWebVitals";
 
