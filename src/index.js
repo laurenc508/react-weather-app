@@ -17,6 +17,8 @@ root.render(
           <a
             className="footer-text"
             href="https://github.com/laurenc508/react-weather-app"
+            target="_blank"
+            rel="noreferrer"
           >
             Open-sourced on Github
           </a>{" "}

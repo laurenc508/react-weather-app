@@ -1,18 +1,19 @@
 import React from "react";
 import FormattedDate from "./FormattedDate";
 import WeatherIcon from "./WeatherIcon";
-import WeatherTemp from "./WeatherTemp";
+import WeatherUnitConversion from "./WeatherUnitConversion";
 
 import "bootstrap/dist/css/bootstrap.css";
 import "./WeatherInfo.css";
 import "./Weather.css";
 
-export default function WeatherInfo(props) {
+export default function WeatherCurrentDay(props) {
   return (
     <div className="container">
       <div className="col-md-12 weather-details">
         <div className="row">
-          <h2>{props.data.city}</h2>
+          {/*assumes this is more like a micro app that is embedded within another page, therefore there are no heading tags for seo as they would be on the page */}
+          <p class="h2">{props.data.city}</p>
           <ul>
             <li>
               <FormattedDate date={props.data.date} />
@@ -22,11 +23,15 @@ export default function WeatherInfo(props) {
         </div>
         <div className="col-md-12 weather-details">
           <WeatherIcon
-            code={props.data.icon_url}
+            code={props.data.icon}
             alt={props.data.description}
+            size={40}
           />
           <div>
-            <WeatherTemp celsius={props.data.temperature} />
+            <WeatherUnitConversion
+              celsius={props.data.temperature}
+              alt="temperature unit conversion"
+            />
           </div>
         </div>
       </div>

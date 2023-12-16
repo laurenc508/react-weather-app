@@ -1,5 +1,5 @@
 import React from "react";
-import Weather from "./Weather";
+import SearchWeather from "./SearchWeather";
 
 import "./App.css";
 import "bootstrap/dist/css/bootstrap.css";
@@ -8,7 +8,7 @@ export default function App() {
   return (
     <div className="app">
       <div className="container content">
-        <Weather defaultCity="Melbourne"/>
+        <SearchWeather defaultCity="Melbourne" />
       </div>
     </div>
   );

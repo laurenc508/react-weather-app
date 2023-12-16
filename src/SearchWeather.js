@@ -1,20 +1,20 @@
 import React, { useState } from "react";
 import axios from "axios";
-import WeatherInfo from "./WeatherInfo";
-import WeatherForecast from "./WeatherForecast";
 
 import "bootstrap/dist/css/bootstrap.css";
-import "./Weather.css";
 
-export default function Weather(props) {
+import WeatherCurrentDay from "./WeatherCurrentDay";
+import WeatherForecastResponse from "./WeatherForecastResponse";
+
+export default function SearchWeather(props) {
   const [weatherData, setWeatherData] = useState({ ready: false });
   const [city, setCity] = useState(props.defaultCity);
 
   function handleResponse(response) {
-    console.log(response.data);
     setWeatherData({
       ready: true,
       temperature: response.data.main.temp,
+      coordinates: response.data.coord,
       humidity: response.data.main.humidity,
       wind: response.data.wind.speed,
       date: new Date(response.data.dt * 1000),
@@ -27,7 +27,7 @@ export default function Weather(props) {
   function Search() {
     const apiKey = "11ac77d4c412e530dd8cf272c4c04c34";
     const units = "metric";
-    const apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=${units}`;
+    let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=${units}`;
     axios.get(apiUrl).then(handleResponse);
   }
 
@@ -67,8 +67,8 @@ export default function Weather(props) {
         </form>
         <div>
           <div className="row">
-            <WeatherInfo data={weatherData} />
-            <WeatherForecast />
+            <WeatherCurrentDay data={weatherData} />
+            <WeatherForecastResponse coordinates={weatherData.coordinates} />
           </div>
         </div>
       </div>
