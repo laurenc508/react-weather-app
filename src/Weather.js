@@ -3,7 +3,6 @@ import axios from "axios";
 import WeatherInfo from "./WeatherInfo";
 import WeatherForecast from "./WeatherForecast";
 
-
 import "bootstrap/dist/css/bootstrap.css";
 import "./Weather.css";
 

@@ -42,7 +42,7 @@ h3 {
   color: white;
   text-decoration: underline;
 }
-.sun-current {
+.current-day {
   text-align: center;
   font-size: 64px;
   margin-top: 15px;
@@ -117,4 +117,8 @@ h3 {
 }
 .container {
   margin-top: 25px;
+}
+
+.card-border {
+  padding: 0;
 }

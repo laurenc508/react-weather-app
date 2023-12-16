@@ -1,79 +1,43 @@
-import React from "react";
-import WeatherIcon from "./WeatherIcon";
+import React, { useEffect, useState } from "react";
+import WeatherForecastDay from "./WeatherForecastDay";
+import "./index.css";
+import "./Weather.css";
 
-export default function WeatherForecast() {
-  return (
-    <div className="WeatherForecast">
-      <div className="row">
-        <div className="card-group">
-          <div className="card">
-            <i className="fas fa-cloud cloud"></i>
-            <div className="card-body">
-              <h5 className="card-title">Tues</h5>
-              <p className="card-text">
-                9°C/
-                <br />
-                24°C
-              </p>
-            </div>
-          </div>
-          <div className="card">
-            <i className="fas fa-sun sun"></i>
-            <div className="card-body">
-              <h5 className="card-title">Wed</h5>
-              <p className="card-text">
-                8°C/
-                <br />
-                16°C
-              </p>
-            </div>
-          </div>
-          <div className="card">
-            <i className="fas fa-sun sun"></i>
-            <div className="card-body">
-              <h5 className="card-title">Thurs</h5>
-              <p className="card-text">
-                10°C/
-                <br />
-                23°C
-              </p>
-            </div>
-          </div>
-          <div className="card">
-            <i className="fas fa-cloud-sun cloud-sun"></i>
-            <div className="card-body">
-              <h5 className="card-title">Fri</h5>
-              <p className="card-text">
-                9°C/
-                <br />
-                24°C
-              </p>
-            </div>
-          </div>
-          <div className="card">
-            <i className="fas fa-cloud-showers-heavy rain"></i>
-            <div className="card-body">
-              <h5 className="card-title">Sat</h5>
-              <p className="card-text">
-                7°C/
-                <br />
-                20°C
-              </p>
-            </div>
-          </div>
-          <div className="card">
-            <i className="fas fa-cloud-showers-heavy rain"></i>
-            <div className="card-body">
-              <h5 className="card-title">Sun</h5>
-              <p className="card-text">
-                9°C/
-                <br />
-                21°C
-              </p>
-            </div>
-          </div>
-        </div>
+import axios from "axios";
+
+export default function WeatherForecast(props) {
+  let [loaded, setLoaded] = useState(false);
+  let [forecast, setForecast] = useState(null);
+
+  useEffect(() => {
+    setLoaded(false);
+  }, [props.coordinates]);
+
+  function handleResponse(response) {
+    setForecast(response.data.daily);
+    setLoaded(true);
+  }
+
+  if (loaded) {
+    return (
+      <div>
+        {forecast.map(function (dailyForecast, index) {
+          if (index < 6) {
+            return (
+              <div key={index}>
+                <WeatherForecastDay data={dailyForecast} />
+              </div>
+            );
+          }
+        })}
       </div>
-    </div>
-  );
+    );
+  } else {
+    let apiKey = "11ac77d4c412e530dd8cf272c4c04c34";
+    let longitude = props.coordinates.lon;
+    let latitude = props.coordinates.lat;
+    let apiUrl = `https://api.openweathermap.org/data/3.0/onecall?lat=${latitude}&lon=${longitude}&appid=${apiKey}&units=metric`;
+    axios.get(apiUrl).then(handleResponse);
+    return null;
+  }
 }

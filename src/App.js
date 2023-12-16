@@ -8,7 +8,7 @@ export default function App() {
   return (
     <div className="app">
       <div className="container content">
-        <Weather defaultCity="Melbourne" />
+        <Weather defaultCity="Melbourne"/>
       </div>
     </div>
   );
