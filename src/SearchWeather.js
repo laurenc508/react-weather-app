@@ -20,9 +20,10 @@ export default function SearchWeather(props) {
 
       /*may need to update, as the JSON file may be 10000 out */
       date: new Date(response.data.time * 1000),
-      city: response.data.name,
+      city: response.data.city,
       icon: response.data.condition.icon,
-      description: response.data.weather[0].description,
+      iconURL: response.data.condition.icon_url,
+      description: response.data.condition.description,
     });
   }
 
