@@ -7,10 +7,10 @@ import "./Weather.css";
 export default function WeatherIcon(props) {
   console.log(props.condition);
   const codeMapping = {
-    "Clear sky": "clear-sky-day",
-    "Clear sky": "clear-sky-night",
-    "02d": "few-clouds-day",
-    "02n": "few-clouds-night",
+    "clear-sky-day": "Clear sky",
+    "clear-sky-night": "Clear sky",
+    "few-clouds-day": "Few clouds",
+    "few-clouds-night": "Few clouds",
     "03d": "scattered-clouds-day",
     "03n": "scattered-clouds-night",
     "04d": "broken-clouds-day",
