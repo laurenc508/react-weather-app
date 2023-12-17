@@ -5,7 +5,7 @@ import "bootstrap/dist/css/bootstrap.css";
 import "./Weather.css";
 
 export default function WeatherIcon(props) {
-  console.log(props.code);
+  console.log(props.condition);
   const codeMapping = {
     "01d": "CLEAR_DAY",
     "01n": "CLEAR_NIGHT",
