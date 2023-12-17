@@ -12,7 +12,6 @@ export default function WeatherCurrentDay(props) {
     <div className="container">
       <div className="col-md-12 weather-details">
         <div className="row">
-          {/*assumes this is more like a micro app that is embedded within another page, therefore there are no heading tags for seo as they would be on the page */}
           <p class="h2">{props.data.city}</p>
           <ul>
             <li>

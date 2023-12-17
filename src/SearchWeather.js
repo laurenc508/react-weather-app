@@ -18,7 +18,7 @@ export default function SearchWeather(props) {
       humidity: response.data.temperature.humidity,
       wind: response.data.wind.speed,
 
-      {/*may need to update, as the JSON file may be 10000 out */}
+      /*may need to update, as the JSON file may be 10000 out */
       date: new Date(response.data.time * 1000),
       city: response.data.name,
       icon: response.data.condition.icon,
