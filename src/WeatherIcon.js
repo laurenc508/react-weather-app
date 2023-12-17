@@ -5,7 +5,6 @@ import "bootstrap/dist/css/bootstrap.css";
 import "./Weather.css";
 
 export default function WeatherIcon(props) {
-  console.log(props.condition);
   const codeMapping = {
     "clear-sky-day": "Clear sky",
     "clear-sky-night": "Clear sky",
@@ -29,6 +28,7 @@ export default function WeatherIcon(props) {
 
   return (
     <div>
+      {/*see if need to map to different thing as not using the react icons */}
       <ReactAnimatedWeather
         icon={codeMapping[props.condition]}
         size={props.size}

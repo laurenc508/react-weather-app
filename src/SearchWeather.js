@@ -13,17 +13,17 @@ export default function SearchWeather(props) {
   function handleResponse(response) {
     setWeatherData({
       ready: true,
-      temperature: response.data.temperature,
+      temperature: response.data.daily.temperature,
       coordinates: response.data.coordinates,
-      humidity: response.data.temperature.humidity,
-      wind: response.data.wind.speed,
+      humidity: response.data.daily.temperature.humidity,
+      wind: response.data.daily.wind.speed,
 
       /*may need to update, as the JSON file may be 10000 out */
-      date: new Date(response.data.time * 1000),
+      date: new Date(response.data.daily.time * 1000),
       city: response.data.city,
-      icon: response.data.condition.icon,
-      iconURL: response.data.condition.icon_url,
-      description: response.data.condition.description,
+      icon: response.data.daily.condition.icon,
+      iconURL: response.data.daily.condition.icon_url,
+      description: response.data.daily.condition.description,
     });
   }
 

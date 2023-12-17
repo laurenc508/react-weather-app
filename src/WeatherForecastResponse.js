@@ -22,9 +22,8 @@ export default function WeatherForecastResponse(props) {
     const apiKey = "t10a312o9db3f83493ae6299a8330334";
     let lat = props.coordinates.latitude;
     let lon = props.coordinates.longitude;
-    let city = props.data.city;
     let units = "metric";
-    let apiUrl = `https://api.shecodes.io/weather/v1/forecast?city=${city}&lon=${lon}&lat=${lat}&key=${apiKey}&units=${units}`;
+    let apiUrl = `https://api.shecodes.io/weather/v1/forecast?lon=${lon}&lat=${lat}&key=${apiKey}&units=${units}`;
     axios.get(apiUrl).then(handleResponse);
   }
 
