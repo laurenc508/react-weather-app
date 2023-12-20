@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+
 import axios from "axios";
 
 import "bootstrap/dist/css/bootstrap.css";
@@ -51,8 +52,6 @@ export default function SearchWeather(props) {
                 type="search"
                 placeholder="Search for a city..."
                 className="form-control"
-                autocomplete="off"
-                autofocus="on"
                 onChange={handleCityChange}
               />
             </div>
