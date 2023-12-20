@@ -3,7 +3,6 @@ import FormattedDate from "./FormattedDate";
 import WeatherUnitConversion from "./WeatherUnitConversion";
 import WeatherIcon from "./WeatherIcon";
 
-
 import "bootstrap/dist/css/bootstrap.css";
 import "./WeatherInfo.css";
 import "./Weather.css";
@@ -13,7 +12,7 @@ export default function WeatherCurrentDay(props) {
     <div className="container">
       <div className="col-md-12 weather-details">
         <div className="row">
-          <p class="h2">{props.data.city}</p>
+          <p className="h2">{props.data.city}</p>
           <ul>
             <li>
               <FormattedDate date={props.data.date} />
