@@ -28,7 +28,7 @@ export default function WeatherIcon(props) {
   };
 
   return (
-    <div class="WeatherIcon">
+    <div className="WeatherIcon">
       {/*see if need to map to different thing as not using the react icons */}
       <img
         src="https://shecodes-assets.s3.amazonaws.com/api/weather/icons/clear-sky-day.png"
