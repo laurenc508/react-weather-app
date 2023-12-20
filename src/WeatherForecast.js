@@ -1,18 +1,18 @@
 import React from "react";
-import WeatherIcon from "./WeatherIcon";
 
 import "./index.css";
 import "bootstrap/dist/css/bootstrap.css";
 import "./Weather.css";
+import WeatherIcon from "./WeatherIcon";
 
 export default function WeatherForecast(props) {
   function maxTemp() {
-    let temperature = Math.round(props.data.temp.max);
+    let temperature = Math.round(props.data.temperature.maximum);
     return `${temperature}°`;
   }
 
   function minTemp() {
-    let temperature = Math.round(props.data.temp.min);
+    let temperature = Math.round(props.data.temperature.minimum);
     return `${temperature}°`;
   }
 
@@ -29,11 +29,9 @@ export default function WeatherForecast(props) {
     <div className="row">
       <div className="col-md-2 card-border">
         <div className="card">
-          <WeatherIcon
-            code={props.data.weather[0].icon}
-            color="#adb5bd"
-            size={52}
-          />
+          <div className="weather-icon">
+            <WeatherIcon />
+          </div>
           <h5 className="card-title"> {day()}</h5>
           <p className="card-text">
             {minTemp()}°C

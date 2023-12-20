@@ -1,7 +1,8 @@
 import React from "react";
 import FormattedDate from "./FormattedDate";
-import WeatherIcon from "./WeatherIcon";
 import WeatherUnitConversion from "./WeatherUnitConversion";
+import WeatherIcon from "./WeatherIcon";
+
 
 import "bootstrap/dist/css/bootstrap.css";
 import "./WeatherInfo.css";
@@ -21,11 +22,9 @@ export default function WeatherCurrentDay(props) {
           </ul>
         </div>
         <div className="col-md-12 weather-details">
-          <WeatherIcon
-            code={props.data.icon}
-            alt={props.data.description}
-            size={40}
-          />
+          <div className="weather-icon">
+            <WeatherIcon />
+          </div>
           <div>
             <WeatherUnitConversion
               celsius={props.data.temperature}

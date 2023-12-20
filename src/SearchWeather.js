@@ -13,24 +13,22 @@ export default function SearchWeather(props) {
   function handleResponse(response) {
     setWeatherData({
       ready: true,
-      temperature: response.data.daily.temperature,
+      temperature: response.data.temperature.current,
       coordinates: response.data.coordinates,
-      humidity: response.data.daily.temperature.humidity,
-      wind: response.data.daily.wind.speed,
-
-      /*may need to update, as the JSON file may be 10000 out */
-      date: new Date(response.data.daily.time * 1000),
+      humidity: response.data.temperature.humidity,
+      wind: response.data.wind.speed,
+      date: new Date(response.data.time * 1000),
       city: response.data.city,
-      icon: response.data.daily.condition.icon,
-      iconURL: response.data.daily.condition.icon_url,
-      description: response.data.daily.condition.description,
+      icon: response.data.condition.icon,
+      iconURL: response.data.condition.icon_url,
+      description: response.data.condition.description,
     });
   }
 
   function Search() {
-    const apiKey = "11ac77d4c412e530dd8cf272c4c04c34";
+    const apiKey = "t10a312o9db3f83493ae6299a8330334";
     const units = "metric";
-    let apiUrl = `https://api.shecodes.io/weather/v1/current?city=${city}&appid=${apiKey}&units=${units}`;
+    let apiUrl = `https://api.shecodes.io/weather/v1/current?query=${city}&key=${apiKey}&units=${units}`;
     axios.get(apiUrl).then(handleResponse);
   }
 

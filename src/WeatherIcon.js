@@ -1,8 +1,9 @@
 import React from "react";
-import ReactAnimatedWeather from "react-animated-weather";
 
 import "bootstrap/dist/css/bootstrap.css";
+import "./WeatherInfo.css";
 import "./Weather.css";
+
 
 export default function WeatherIcon(props) {
   const codeMapping = {
@@ -27,9 +28,10 @@ export default function WeatherIcon(props) {
   };
 
   return (
-    <div>
+    <div class="WeatherIcon">
       {/*see if need to map to different thing as not using the react icons */}
-      <ReactAnimatedWeather
+      <img
+        src="https://shecodes-assets.s3.amazonaws.com/api/weather/icons/clear-sky-day.png"
         icon={codeMapping[props.condition]}
         size={props.size}
       />
