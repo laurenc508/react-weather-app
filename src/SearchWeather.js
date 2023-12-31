@@ -21,7 +21,7 @@ export default function SearchWeather(props) {
       city: response.data.name,
       icon: response.data.weather[0].icon,
       description: response.data.weather[0].description,
-      coord: response.data.coordinates,
+      coordinates: response.data.coord,
     });
   }
 
@@ -64,12 +64,8 @@ export default function SearchWeather(props) {
             </div>
           </div>
         </form>
-        <div>
-          <div className="row">
-            <WeatherCurrentDay data={weatherData} />
-            <WeatherForecastResponse coordinates={weatherData.coordinates} />
-          </div>
-        </div>
+        <WeatherCurrentDay data={weatherData} />
+        <WeatherForecastResponse coordinates={weatherData.coordinates} />
       </div>
     );
   } else {
