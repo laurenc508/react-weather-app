@@ -1,39 +1,38 @@
 import React from "react";
+import ReactAnimatedWeather from "react-animated-weather";
 
 import "bootstrap/dist/css/bootstrap.css";
 import "./WeatherInfo.css";
 import "./Weather.css";
 
-
 export default function WeatherIcon(props) {
   const codeMapping = {
-    "clear-sky-day": "Clear sky",
-    "clear-sky-night": "Clear sky",
-    "few-clouds-day": "Few clouds",
-    "few-clouds-night": "Few clouds",
-    "scattered-clouds-day": "Scattered clouds",
-    "scattered-clouds-night": "Scattered clouds",
-    "broken-clouds-day": "Broken clouds",
-    "broken-clouds-night": "Broken clouds",
-    "shower-rain-day": "Shower rains",
-    "shower-rain-night": "Shower rain",
-    "rain-day": "Rain",
-    "rain-night": "Rain",
-    "thunderstorm-day": "Thunderstorm",
-    "thunderstorm-night": "Thunderstorm",
-    "snow-day": "Snow",
-    "snow-night": "Snow",
-    "mist-day": "Mist",
-    "mist-night": "Mist",
+    "01d": "clear-sky-day",
+    "01n": "clear-sky-night",
+    "02d": "PARTLY_CLOUDY_DAY",
+    "02n": "PARTLY_CLOUDY_NIGHT",
+    "03d": "PARTLY_CLOUDY_DAY",
+    "03n": "PARTLY_CLOUDY_NIGHT",
+    "04d": "CLOUDY",
+    "04n": "CLOUDY",
+    "09d": "RAIN",
+    "09n": "RAIN",
+    "010d": "RAIN",
+    "010n": "RAIN",
+    "011d": "RAIN",
+    "011n": "RAIN",
+    "013d": "SNOW",
+    "013n": "SNOW",
+    "050d": "FOG",
+    "050n": "FOG",
   };
 
   return (
-    <div className="WeatherIcon">
-      {/*see if need to map to different thing as not using the react icons */}
-      <img
-        src="https://shecodes-assets.s3.amazonaws.com/api/weather/icons/clear-sky-day.png"
-        icon={codeMapping[props.condition]}
-        size={props.size}
+    <div>
+      <ReactAnimatedWeather
+        icon={codeMapping[props.code]}
+        size={52}
+        animate={true}
       />
     </div>
   );

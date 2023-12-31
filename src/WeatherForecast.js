@@ -30,7 +30,7 @@ export default function WeatherForecast(props) {
       <div className="col-md-2 card-border">
         <div className="card">
           <div className="weather-icon">
-            <WeatherIcon />
+            <WeatherIcon code={props.data.icon} color="#adb5bd" size={52} />
           </div>
           <h5 className="card-title"> {day()}</h5>
           <p className="card-text">

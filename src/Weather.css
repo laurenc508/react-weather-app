@@ -16,6 +16,10 @@
   margin-bottom: 15px;
 }
 
+.weather-icon canvas {
+  padding: 10px;
+}
+
 ul {
   margin: 0;
   padding: 0;

@@ -22,7 +22,7 @@ export default function WeatherCurrentDay(props) {
         </div>
         <div className="col-md-12 weather-details">
           <div className="weather-icon">
-            <WeatherIcon />
+            <WeatherIcon code={props.data.icon} />
           </div>
           <div>
             <WeatherUnitConversion

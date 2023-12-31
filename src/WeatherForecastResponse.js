@@ -6,43 +6,41 @@ import "./Weather.css";
 import axios from "axios";
 
 export default function WeatherForecastResponse(props) {
-  let [loaded, setLoaded] = useState(false);
-  let [forecast, setForecast] = useState(null);
+  const [ready, setReady] = useState(false);
+  const [forecast, setForecast] = useState(null);
 
   useEffect(() => {
-    setLoaded(false);
+    setReady(false);
   }, [props.coordinates]);
 
   function handleResponse(response) {
     setForecast(response.data.daily);
-    setLoaded(true);
+    setReady(true);
   }
 
   function load() {
-    const apiKey = "t10a312o9db3f83493ae6299a8330334";
-    let lat = props.coordinates.latitude;
-    let lon = props.coordinates.longitude;
+    let apiKey = "ee6baaf04ef0812e0b9985d92bacfccb";
+    let latitude = props.coordinates.lat;
+    let longitude = props.coordinates.lon;
     let units = "metric";
-    let apiUrl = `https://api.shecodes.io/weather/v1/forecast?lon=${lon}&lat=${lat}&key=${apiKey}&units=${units}`;
+    let apiUrl = `https://api.openweathermap.org/data/3.0/onecall?lat=${latitude}&lon=${longitude}&appid=${apiKey}&units=${units}`;
     axios.get(apiUrl).then(handleResponse);
   }
 
-  if (loaded) {
+  if (ready) {
     return (
-      <div className="column">
-        <div className="row">
-          {forecast.map(function (dailyForecast, index) {
-            if (index < 5) {
-              return (
-                <div key={index}>
-                  <WeatherForecast data={dailyForecast} />
-                </div>
-              );
-            } else {
-              return null;
-            }
-          })}
-        </div>
+      <div className="container">
+        {forecast.map(function (dailyForecast, index) {
+          if (index < 5) {
+            return (
+              <div key={index}>
+                <WeatherForecast data={dailyForecast} />
+              </div>
+            );
+          } else {
+            return null;
+          }
+        })}
       </div>
     );
   } else {
