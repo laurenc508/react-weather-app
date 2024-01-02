@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-
 import axios from "axios";
 
 import "bootstrap/dist/css/bootstrap.css";
@@ -14,21 +13,22 @@ export default function SearchWeather(props) {
   function handleResponse(response) {
     setWeatherData({
       ready: true,
-      temperature: response.data.main.temp,
-      humidity: response.data.main.humidity,
+      temperature: response.data.temperature.current,
+      coordinates: response.data.coordinates,
+      humidity: response.data.temperature.humidity,
       wind: response.data.wind.speed,
-      date: new Date(response.data.dt * 1000),
-      city: response.data.name,
-      icon: response.data.weather[0].icon,
-      description: response.data.weather[0].description,
-      coordinates: response.data.coord,
+      date: new Date(response.data.time * 1000),
+      city: response.data.city,
+      icon: response.data.condition.icon,
+      iconURL: response.data.condition.icon_url,
+      description: response.data.condition.description,
     });
   }
 
   function Search() {
-    const apiKey = "ee6baaf04ef0812e0b9985d92bacfccb";
+    const apiKey = "t10a312o9db3f83493ae6299a8330334";
     const units = "metric";
-    let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=${units}`;
+    let apiUrl = `https://api.shecodes.io/weather/v1/current?query=${city}&key=${apiKey}&units=${units}`;
     axios.get(apiUrl).then(handleResponse);
   }
 
@@ -64,8 +64,12 @@ export default function SearchWeather(props) {
             </div>
           </div>
         </form>
-        <WeatherCurrentDay data={weatherData} />
-        <WeatherForecastResponse coordinates={weatherData.coordinates} />
+        <div>
+          <div className="row">
+            <WeatherCurrentDay data={weatherData} />
+            <WeatherForecastResponse coordinates={weatherData.coordinates} />
+          </div>
+        </div>
       </div>
     );
   } else {

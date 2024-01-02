@@ -10,8 +10,8 @@ import "./Weather.css";
 export default function WeatherCurrentDay(props) {
   return (
     <div className="container">
-      <div className="col-md-12 weather-details">
-        <div className="row">
+      <div className="row">
+        <div className="col-md-12 weather-details">
           <p className="h2">{props.data.city}</p>
           <ul>
             <li>
