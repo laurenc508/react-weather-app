@@ -1,6 +1,6 @@
 .forecast {
-  justify-content: center;
-  margin-top: 35px;
+  margin-top: 25px;
+  margin-bottom: 15px;
 }
 
 .days {
@@ -18,6 +18,10 @@
 
 .centered {
   justify-content: center;
+}
+
+.justify-even {
+  justify-content: space-evenly;
 }
 
 .weather-icon {

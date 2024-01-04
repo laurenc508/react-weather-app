@@ -27,15 +27,17 @@ export default function WeatherForecast(props) {
   }
 
   return (
-    <div className="container forecast">
+    <div className="forecast">
       <h5 className="days"> {day()}</h5>
 
-      <div className="weather-icon">
-        <WeatherIcon
-          code={props.data.condition.icon}
-          color="#adb5bd"
-          size={52}
-        />
+      <div className="row weather-icon">
+        <div className="container">
+          <WeatherIcon
+            code={props.data.condition.icon}
+            color="#adb5bd"
+            size={52}
+          />
+        </div>
       </div>
 
       <div className="row">
