@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from "react";
 import WeatherForecast from "./WeatherForecast";
+
 import "./index.css";
-import "./Weather.css";
+import "./SearchWeather.css";
 
 import axios from "axios";
 
@@ -20,18 +21,20 @@ export default function WeatherForecastResponse(props) {
 
   if (loaded) {
     return (
-      <div className="row">
-        {forecast.map(function (dailyForecast, index) {
-          if (index < 7) {
-            return (
-              <div className="col" key={index}>
-                <WeatherForecast data={dailyForecast} />
-              </div>
-            );
-          } else {
-            return `data`;
-          }
-        })}
+      <div className="forecast">
+        <div className="row">
+          {forecast.map(function (dailyForecast, index) {
+            if (index < 5) {
+              return (
+                <div className="col" key={index}>
+                  <WeatherForecast data={dailyForecast} />
+                </div>
+              );
+            } else {
+              return null;
+            }
+          })}
+        </div>{" "}
       </div>
     );
   } else {

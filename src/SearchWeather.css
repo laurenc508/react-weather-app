@@ -1,0 +1,71 @@
+.margin-top-medium {
+  margin-top: 15px;
+}
+
+.wrapper-margin-bottom {
+  margin-bottom: 15px;
+}
+
+.weather-icon canvas {
+  padding: 10px;
+}
+
+.btn {
+  border-color: none;
+  color: white;
+  background-color: #555;
+}
+
+.btn:hover {
+  border-color: #666;
+  color: white;
+  background-color: #666;
+}
+
+.weather-details {
+  margin-top: 15px;
+  line-height: 35px;
+}
+
+.weather-icon {
+  margin-bottom: 15px;
+}
+
+.current-day-content {
+  text-align: center;
+}
+
+.formatted-date {
+  line-height: 25px;
+  font-size: larger;
+}
+
+.temp-font {
+  font-size: 70px;
+  line-height: 25px;
+}
+
+.units {
+  text-decoration: none;
+}
+
+.forecast {
+  margin-top: 35px;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+}
+li {
+  list-style: none;
+  font-size: 16px;
+  font-weight: 100;
+  line-height: 19px;
+  margin: 0;
+  padding: 0;
+}
+
+li:first-letter {
+  text-transform: capitalize;
+}

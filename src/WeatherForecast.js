@@ -3,7 +3,7 @@ import WeatherIcon from "./WeatherIcon";
 
 import "./index.css";
 import "bootstrap/dist/css/bootstrap.css";
-import "./Weather.css";
+import "./SearchWeather.css";
 
 export default function WeatherForecast(props) {
   function maxTemp() {
@@ -25,23 +25,25 @@ export default function WeatherForecast(props) {
     return days[day];
   }
 
-  <div className="WeatherForecast">
-    <div className="row">
-      <div className="col-md-2 card-border">
-        <div className="card">
-          <WeatherIcon
-            code={props.data.condition.icon}
-            color="#adb5bd"
-            size={52}
-          />
-          <h5 className="card-title"> {day()}</h5>
-          <p className="card-text">
-            {minTemp()}°C
-            <br />
-            {maxTemp()}°C
-          </p>
+  return (
+    <div className="forecast">
+      <div className="row">
+        <div className="col-md-2">
+          <div>
+            <WeatherIcon
+              code={props.data.condition.icon}
+              color="#adb5bd"
+              size={52}
+            />
+            <h5> {day()}</h5>
+            <p>
+              min: {minTemp()}C
+              <br />
+              max: {maxTemp()}C
+            </p>
+          </div>
         </div>
       </div>
     </div>
-  </div>;
+  );
 }

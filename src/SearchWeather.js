@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import axios from "axios";
 
 import "bootstrap/dist/css/bootstrap.css";
+import "./SearchWeather.css";
 
 import WeatherCurrentDay from "./WeatherCurrentDay";
 import WeatherForecastResponse from "./WeatherForecastResponse";
@@ -43,10 +44,10 @@ export default function SearchWeather(props) {
 
   if (weatherData.ready) {
     return (
-      <div className="container">
+      <div className="app-padding">
         <form className="form" onSubmit={handleSubmit}>
           <div className="row">
-            <div className="col-md-9 wrapper-margin-top">
+            <div className="col-md-9 margin-top-medium">
               <input
                 type="search"
                 placeholder="Search for a city..."
@@ -54,11 +55,11 @@ export default function SearchWeather(props) {
                 onChange={handleCityChange}
               />
             </div>
-            <div className="col-md-3 wrapper-margin-top">
+            <div className="col-md-3 margin-top-medium">
               <input
                 type="submit"
                 value="search"
-                className="btn btn-primary w-100"
+                className="btn w-100"
                 onClick={handleSubmit}
               />
             </div>

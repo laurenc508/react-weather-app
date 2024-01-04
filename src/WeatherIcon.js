@@ -2,8 +2,7 @@ import React from "react";
 import ReactAnimatedWeather from "react-animated-weather";
 
 import "bootstrap/dist/css/bootstrap.css";
-import "./WeatherInfo.css";
-import "./Weather.css";
+import "./SearchWeather.css";
 
 export default function WeatherIcon(props) {
   const codeMapping = {

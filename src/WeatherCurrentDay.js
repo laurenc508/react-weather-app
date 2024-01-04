@@ -4,12 +4,11 @@ import WeatherUnitConversion from "./WeatherUnitConversion";
 import WeatherIcon from "./WeatherIcon";
 
 import "bootstrap/dist/css/bootstrap.css";
-import "./WeatherInfo.css";
-import "./Weather.css";
+import "./SearchWeather.css";
 
 export default function WeatherCurrentDay(props) {
   return (
-    <div className="container">
+    <div className="current-day-content">
       <div className="row">
         <div className="col-md-12 weather-details">
           <p className="h2">{props.data.city}</p>
@@ -33,17 +32,12 @@ export default function WeatherCurrentDay(props) {
         </div>
       </div>
 
-      <div className="container weather-details">
+      <div className="weather-details">
         <div className="row">
           <div className="col-md-12">
             <ul>
-              <li>
-                Humidity: <span>{props.data.humidity}</span>%
-              </li>
-              <li>
-                Wind: <span>{props.data.wind}</span>
-                <span className="wind-speed"> km/h</span>
-              </li>
+              <li>Humidity: {props.data.humidity} %</li>
+              <li>Wind: {props.data.wind} km/h</li>
             </ul>
           </div>
         </div>
