@@ -53,6 +53,16 @@
   margin-top: 35px;
 }
 
+.days {
+  text-align: center;
+  color: #7852a9;
+  font-weight: 600;
+}
+
+.min-max-temp {
+  font-size: smaller;
+}
+
 ul {
   margin: 0;
   padding: 0;
@@ -68,4 +78,9 @@ li {
 
 li:first-letter {
   text-transform: capitalize;
+}
+
+.line-break {
+  display: block;
+  align-content: center;
 }

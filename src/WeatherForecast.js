@@ -29,18 +29,21 @@ export default function WeatherForecast(props) {
     <div className="forecast">
       <div className="row">
         <div className="col-md-2">
+          <h5 class="days"> {day()}</h5>
+
           <div>
             <WeatherIcon
               code={props.data.condition.icon}
               color="#adb5bd"
               size={52}
             />
-            <h5> {day()}</h5>
-            <p>
-              min: {minTemp()}C
-              <br />
-              max: {maxTemp()}C
-            </p>
+            <span class="min-max-temp card-text">min:</span> {minTemp()}C
+            <br />
+            <div class="line-break">
+              {" "}
+              <hr />
+            </div>
+            <span class="min-max-temp">max:</span> {maxTemp()}C
           </div>
         </div>
       </div>
