@@ -1,0 +1,25 @@
+.forecast {
+  justify-content: center;
+  margin-top: 35px;
+}
+
+.days {
+  color: #7852a9;
+  font-weight: 600;
+}
+
+.min-max-temp {
+  font-size: 12px;
+}
+
+.temp-value {
+  font-size: 16px;
+}
+
+.centered {
+  justify-content: center;
+}
+
+.weather-icon {
+  justify-content: top;
+}

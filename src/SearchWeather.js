@@ -44,7 +44,7 @@ export default function SearchWeather(props) {
 
   if (weatherData.ready) {
     return (
-      <div className="app-padding">
+      <div className="container">
         <form className="form" onSubmit={handleSubmit}>
           <div className="row">
             <div className="col-md-9 margin-top-medium">
@@ -68,6 +68,8 @@ export default function SearchWeather(props) {
         <div>
           <div className="row">
             <WeatherCurrentDay data={weatherData} />
+          </div>
+          <div>
             <WeatherForecastResponse coordinates={weatherData.coordinates} />
           </div>
         </div>

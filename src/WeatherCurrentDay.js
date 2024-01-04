@@ -11,7 +11,7 @@ export default function WeatherCurrentDay(props) {
     <div className="current-day-content">
       <div className="row">
         <div className="col-md-12 weather-details">
-          <p className="h2">{props.data.city}</p>
+          <p className="h2 margin-top-medium">{props.data.city}</p>
           <ul>
             <li>
               <FormattedDate date={props.data.date} />
@@ -42,6 +42,8 @@ export default function WeatherCurrentDay(props) {
           </div>
         </div>
       </div>
+      <br />
+      <hr />
     </div>
   );
 }

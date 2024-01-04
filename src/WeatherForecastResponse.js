@@ -3,6 +3,7 @@ import WeatherForecast from "./WeatherForecast";
 
 import "./index.css";
 import "./SearchWeather.css";
+import "./WeatherForecast.css";
 
 import axios from "axios";
 
@@ -21,7 +22,7 @@ export default function WeatherForecastResponse(props) {
 
   if (loaded) {
     return (
-      <div className="forecast">
+      <div className="container">
         <div className="row">
           {forecast.map(function (dailyForecast, index) {
             if (index < 5) {
