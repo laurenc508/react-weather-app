@@ -14,11 +14,16 @@ export default function WeatherCurrentDay(props) {
           <p className="h2 margin-top-medium">{props.data.city}</p>
           <ul>
             <li>
-              <FormattedDate date={props.data.date} />
+              <span>Last updated:</span>
+              <span>
+                <FormattedDate date={props.data.date} />
+              </span>
             </li>
+            <br />
             <li>{props.data.description}</li>
           </ul>
         </div>
+
         <div className="col-md-12 weather-details">
           <div className="weather-icon">
             <WeatherIcon code={props.data.icon} />
